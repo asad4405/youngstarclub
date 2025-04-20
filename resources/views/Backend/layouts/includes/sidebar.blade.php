@@ -116,11 +116,10 @@
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon bi bi-table"></span><span class="mtext">Tables</span>
+                        <span class="micon bi bi-table"></span><span class="mtext">Programs</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="basic-table.html">Basic Tables</a></li>
-                        <li><a href="datatable.html">DataTables</a></li>
+                        <li><a href="{{ route('admin.program.index') }}">Programs</a></li>
                     </ul>
                 </li>
                 <li>

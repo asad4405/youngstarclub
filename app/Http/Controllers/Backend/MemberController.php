@@ -14,7 +14,7 @@ class MemberController extends Controller
      */
     public function index()
     {
-        $members = User::where(['status' => 1,'role'=>'member'])->orderBy('position','ASC')->get();
+        $members = User::where(['role'=>'member'])->orderBy('position','ASC')->get();
         return view('Backend.member.index',compact('members'));
     }
 
