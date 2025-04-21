@@ -15,7 +15,7 @@ class DonationController extends Controller
      */
     public function index()
     {
-        $donations = Donation::where('status', 1)->orderBy('position', 'DESC')->get();
+        $donations = Donation::where('status', 1)->orderBy('position', 'ASC')->get();
         return view('Backend.donation.index', compact('donations'));
     }
 
@@ -24,7 +24,7 @@ class DonationController extends Controller
      */
     public function create()
     {
-        $programs = Program::where('status', 1)->orderBy('position', 'DESC')->get();
+        $programs = Program::where('status', 1)->orderBy('position', 'ASC')->get();
         return view('Backend.donation.create', compact('programs'));
     }
 

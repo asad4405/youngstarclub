@@ -129,7 +129,7 @@
                     <ul class="submenu">
                         <li><a href="{{ route('admin.collection.index') }}">Club Member Collection</a></li>
                         <li><a href="{{ route('admin.donation.index') }}">Donation</a></li>
-                        <li><a href="">Expense</a></li>
+                        <li><a href="{{ route('admin.expense.index') }}">Expense</a></li>
                     </ul>
                 </li>
                 <li>

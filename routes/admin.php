@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\CollectionController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\DonationController;
+use App\Http\Controllers\Backend\ExpenseController;
 use App\Http\Controllers\Backend\MemberController;
 use App\Http\Controllers\Backend\ProgramController;
 use Illuminate\Support\Facades\Route;
@@ -21,4 +22,7 @@ Route::resource('/club-memeber/collection', CollectionController::class, ['names
 
 // Donation
 Route::resource('/donation', DonationController::class, ['names' => 'admin.donation']);
+
+// Expense
+Route::resource('/expense', ExpenseController::class, ['names' => 'admin.expense']);
 

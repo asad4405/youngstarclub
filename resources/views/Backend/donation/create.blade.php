@@ -10,7 +10,7 @@
         <form action="{{ route('admin.donation.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group row">
-                <label class="col-sm-12 col-md-2 col-form-label">Member Name</label>
+                <label class="col-sm-12 col-md-2 col-form-label">Program Name</label>
                 <div class="col-sm-12 col-md-10">
                     <select name="program_id" class="form-control">
                         @foreach ($programs as $value)
