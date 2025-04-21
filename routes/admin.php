@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\CollectionController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\DonationController;
 use App\Http\Controllers\Backend\MemberController;
 use App\Http\Controllers\Backend\ProgramController;
 use Illuminate\Support\Facades\Route;
@@ -17,4 +18,7 @@ Route::resource('/program', ProgramController::class, ['names' => 'admin.program
 
 // Club Member Collection
 Route::resource('/club-memeber/collection', CollectionController::class, ['names' => 'admin.collection']);
+
+// Donation
+Route::resource('/donation', DonationController::class, ['names' => 'admin.donation']);
 
