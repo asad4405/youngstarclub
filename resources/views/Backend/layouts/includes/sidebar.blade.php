@@ -138,6 +138,7 @@
                     </a>
                     <ul class="submenu">
                         <li><a href="{{ route('admin.setting.index') }}">General Setting</a></li>
+                        <li><a href="{{ route('admin.setting.social-media.index') }}">Social Media</a></li>
                     </ul>
                 </li>
                 <li>

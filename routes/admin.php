@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\ExpenseController;
 use App\Http\Controllers\Backend\GeneralSettingController;
 use App\Http\Controllers\Backend\MemberController;
 use App\Http\Controllers\Backend\ProgramController;
+use App\Http\Controllers\Backend\SocialMediaController;
 use App\Http\Controllers\Backend\UserListController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,4 +33,7 @@ Route::resource('/expense', ExpenseController::class, ['names' => 'admin.expense
 
 // setting
 Route::resource('/setting', GeneralSettingController::class, ['names' => 'admin.setting']);
+
+// social media
+Route::resource('social-media', SocialMediaController::class, ['names' => 'admin.setting.social-media']);
 });
