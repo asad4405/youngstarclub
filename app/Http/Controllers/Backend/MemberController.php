@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class MemberController extends Controller
 {
@@ -14,8 +15,8 @@ class MemberController extends Controller
      */
     public function index()
     {
-        $members = User::where(['role'=>'member'])->orderBy('position','ASC')->get();
-        return view('Backend.member.index',compact('members'));
+        $members = User::where(['role' => 'member'])->orderBy('position', 'ASC')->get();
+        return view('Backend.member.index', compact('members'));
     }
 
     /**
@@ -64,7 +65,7 @@ class MemberController extends Controller
         $member->password = Hash::make('youngstarclub1234');
 
         $member->save();
-        return redirect()->route('admin.member.index')->with('success','New Member Added Successfull!');
+        return redirect()->route('admin.member.index')->with('success', 'New Member Added Successfull!');
     }
 
     /**
@@ -72,7 +73,8 @@ class MemberController extends Controller
      */
     public function show(string $id)
     {
-        return view('Backend.member.show');
+        $member = User::find($id);
+        return view('Backend.member.show', compact('member'));
     }
 
     /**
@@ -81,7 +83,7 @@ class MemberController extends Controller
     public function edit(string $id)
     {
         $member = User::find($id);
-        return view('Backend.member.edit',compact('member'));
+        return view('Backend.member.edit', compact('member'));
     }
 
     /**
@@ -140,5 +142,13 @@ class MemberController extends Controller
 
         $member->delete();
         return redirect()->route('admin.member.index')->with('delete-success', 'New Member Added Successfull!');
+    }
+
+    public function download($id)
+    {
+        $member = User::find($id);
+        // return view('pdf.club_member.invoice',compact('member'));
+        $pdf = Pdf::loadView('pdf.club_member.invoice', compact('member'));
+        return $pdf->download('youngstarclub-member-info-invoice.pdf');
     }
 }

@@ -10,6 +10,10 @@
                 <a href="{{ route('admin.member.create') }}" class="btn btn-primary btn-sm scroll-click"><i
                         class="fa fa-plus"></i> Create</a>
             </div>
+            <div class="mx-2 pull-right">
+                <a href="{{ route('admin.member.create') }}" class="btn btn-danger btn-sm scroll-click"><i
+                        class="fa fa-download"></i> Download</a>
+            </div>
         </div>
         @if (session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
@@ -52,7 +56,8 @@
                                         <i class="dw dw-more"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                        <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
+                                        <a class="dropdown-item" href="{{ route('admin.member.show', $value->id) }}"><i class="dw dw-eye"></i> View</a>
+                                        <a class="dropdown-item" href="{{ route('admin.member.download', $value->id) }}"><i class="icon-copy fa fa-download" aria-hidden="true"></i> Download</a>
                                         <a class="dropdown-item" href="{{ route('admin.member.edit', $value->id) }}"><i
                                                 class="dw dw-edit2"></i> Edit</a>
                                         <form action="{{ route('admin.member.destroy', $value->id) }}" method="POST">

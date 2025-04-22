@@ -6,13 +6,16 @@ use App\Http\Controllers\Backend\DonationController;
 use App\Http\Controllers\Backend\ExpenseController;
 use App\Http\Controllers\Backend\MemberController;
 use App\Http\Controllers\Backend\ProgramController;
+use App\Http\Controllers\Backend\UserListController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/dashboard',[DashboardController::class,'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::middleware('auth')->group(function () {
 // member
 Route::resource('/member', MemberController::class, ['names' => 'admin.member']);
+Route::get('/member/download/{id}', [MemberController::class, 'download'])->name('admin.member.download');
 
 // program
 Route::resource('/program', ProgramController::class, ['names' => 'admin.program']);
@@ -26,3 +29,4 @@ Route::resource('/donation', DonationController::class, ['names' => 'admin.donat
 // Expense
 Route::resource('/expense', ExpenseController::class, ['names' => 'admin.expense']);
 
+});
