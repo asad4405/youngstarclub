@@ -132,6 +132,14 @@
                         <li><a href="{{ route('admin.expense.index') }}">Expense</a></li>
                     </ul>
                 </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon bi bi-archive"></span><span class="mtext"> Settings </span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="{{ route('admin.setting.index') }}">General Setting</a></li>
+                    </ul>
+                </li>
                 <li>
                     <a href="calendar.html" class="dropdown-toggle no-arrow">
                         <span class="micon bi bi-calendar4-week"></span><span class="mtext">Calendar</span>

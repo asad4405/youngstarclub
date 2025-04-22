@@ -4,6 +4,7 @@ use App\Http\Controllers\Backend\CollectionController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\DonationController;
 use App\Http\Controllers\Backend\ExpenseController;
+use App\Http\Controllers\Backend\GeneralSettingController;
 use App\Http\Controllers\Backend\MemberController;
 use App\Http\Controllers\Backend\ProgramController;
 use App\Http\Controllers\Backend\UserListController;
@@ -29,4 +30,6 @@ Route::resource('/donation', DonationController::class, ['names' => 'admin.donat
 // Expense
 Route::resource('/expense', ExpenseController::class, ['names' => 'admin.expense']);
 
+// setting
+Route::resource('/setting', GeneralSettingController::class, ['names' => 'admin.setting']);
 });
