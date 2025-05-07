@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\CollectionController;
+use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\DonationController;
 use App\Http\Controllers\Backend\ExpenseController;
@@ -15,25 +16,29 @@ use Illuminate\Support\Facades\Route;
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-// member
-Route::resource('/member', MemberController::class, ['names' => 'admin.member']);
-Route::get('/member/download/{id}', [MemberController::class, 'download'])->name('admin.member.download');
+    // member
+    Route::resource('/member', MemberController::class, ['names' => 'admin.member']);
+    Route::get('/member/download/{id}', [MemberController::class, 'download'])->name('admin.member.download');
 
-// program
-Route::resource('/program', ProgramController::class, ['names' => 'admin.program']);
+    // program
+    Route::resource('/program', ProgramController::class, ['names' => 'admin.program']);
 
-// Club Member Collection
-Route::resource('/club-memeber/collection', CollectionController::class, ['names' => 'admin.collection']);
+    // Club Member Collection
+    Route::resource('/club-memeber/collection', CollectionController::class, ['names' => 'admin.collection']);
 
-// Donation
-Route::resource('/donation', DonationController::class, ['names' => 'admin.donation']);
+    // Donation
+    Route::resource('/donation', DonationController::class, ['names' => 'admin.donation']);
 
-// Expense
-Route::resource('/expense', ExpenseController::class, ['names' => 'admin.expense']);
+    // Expense
+    Route::resource('/expense', ExpenseController::class, ['names' => 'admin.expense']);
 
-// setting
-Route::resource('/setting', GeneralSettingController::class, ['names' => 'admin.setting']);
+    // setting
+    Route::resource('/setting', GeneralSettingController::class, ['names' => 'admin.setting']);
 
-// social media
-Route::resource('social-media', SocialMediaController::class, ['names' => 'admin.setting.social-media']);
+    // social media
+    Route::resource('social-media', SocialMediaController::class, ['names' => 'admin.setting.social-media']);
+
+    // contat
+    Route::resource('contact', ContactController::class, ['names' => 'admin.setting.contact']);
+
 });
