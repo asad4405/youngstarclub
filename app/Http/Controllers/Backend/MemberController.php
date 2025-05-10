@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Mail\AddMemberSendMail;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\Mail;
 
 class MemberController extends Controller
 {
@@ -62,7 +64,10 @@ class MemberController extends Controller
             $member->image   = $imagePath . $imageName;
         }
 
-        $member->password = Hash::make('youngstarclub1234');
+        $password = 'youngstarclub1234';
+        $member->password = Hash::make($password);
+
+        Mail::to($request->user())->send(new AddMemberSendMail($request->name, $request->father_name, $request->mother_name, $request->phone, $request->email, $request->birthday_date ,$request->present_address, $request->permanent_address, $request->id_card, $request->nationality, $request->religion, $request->profession, $request->blood_group, $request->education, $member->image, $password));
 
         $member->save();
         return redirect()->route('admin.member.index')->with('success', 'New Member Added Successfull!');
