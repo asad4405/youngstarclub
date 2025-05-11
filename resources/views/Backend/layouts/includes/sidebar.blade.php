@@ -142,6 +142,14 @@
                         <li><a href="{{ route('admin.setting.social-media.index') }}">Social Media</a></li>
                     </ul>
                 </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon bi bi-code"></span><span class="mtext"> API Integration </span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="{{ route('admin.mail-gateway.index') }}">Mail Gateway</a></li>
+                    </ul>
+                </li>
                 <li>
                     <a href="calendar.html" class="dropdown-toggle no-arrow">
                         <span class="micon bi bi-calendar4-week"></span><span class="mtext">Calendar</span>

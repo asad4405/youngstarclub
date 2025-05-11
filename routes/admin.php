@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\DonationController;
 use App\Http\Controllers\Backend\ExpenseController;
 use App\Http\Controllers\Backend\GeneralSettingController;
+use App\Http\Controllers\Backend\MailGatewayController;
 use App\Http\Controllers\Backend\MemberController;
 use App\Http\Controllers\Backend\ProgramController;
 use App\Http\Controllers\Backend\SocialMediaController;
@@ -40,5 +41,8 @@ Route::middleware('auth')->group(function () {
 
     // contat
     Route::resource('contact', ContactController::class, ['names' => 'admin.setting.contact']);
+
+    // mail gateway
+    Route::resource('mail-gateway', MailGatewayController::class, ['names' => 'admin.mail-gateway']);
 
 });

@@ -106,23 +106,3 @@
 
 </body>
 </html>
-
-{{-- <body>
-    <h1>Member Information</h1>
-    <p><strong>Name:</strong> {{ $name }}</p>
-    <p><strong>Father's Name:</strong> {{ $father_name }}</p>
-    <p><strong>Mother's Name:</strong> {{ $mother_name }}</p>
-    <p><strong>Phone:</strong> {{ $phone }}</p>
-    <p><strong>Email:</strong> {{ $email }}</p>
-    <p><strong>Birthday:</strong> {{ $birthday_date }}</p>
-    <p><strong>Present Address:</strong> {{ $present_address }}</p>
-    <p><strong>ID Card:</strong> {{ $id_card }}</p>
-    <p><strong>Nationality:</strong> {{ $nationality }}</p>
-    <p><strong>Religion:</strong> {{ $religion }}</p>
-    <p><strong>Profession:</strong> {{ $profession }}</p>
-    <p><strong>Blood Group:</strong> {{ $blood_group }}</p>
-    <p><strong>Education:</strong> {{ $education }}</p>
-    <p><strong>Image:</strong> {{ $image }}</p>
-    <p><strong>Image:</strong> <img src="{{ asset($image) }}" alt="Member Image"></p>
-</body>
-</html> --}}
